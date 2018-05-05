@@ -1,4 +1,4 @@
-package wuxiang.miku.scorpio.wuxiang.modules;
+package wuxiang.miku.scorpio.wuxiang.modules.eating;
 
 import android.support.v4.app.Fragment;
 
