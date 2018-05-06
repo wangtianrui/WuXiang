@@ -99,7 +99,7 @@
                                     android:gravity="center"
                                     android:paddingBottom="6dp"
                                     android:paddingTop="6dp"
-                                    android:text="评分"
+                                    android:text="找店"
                                     android:textColor="@android:color/white" />
                             </LinearLayout>
 

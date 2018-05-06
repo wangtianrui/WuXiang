@@ -4,14 +4,40 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/container_main"
-        android:layout_weight="1"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <include layout="@layout/layout_main_bottom"/>
+        <FrameLayout
+            android:id="@+id/container_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/floationg_action_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_addButtonColorNormal="@color/white"
+            fab:fab_addButtonColorPressed="@color/white_pressed"
+            fab:fab_addButtonPlusIconColor="@color/half_black"
+            fab:fab_addButtonSize="mini"
+            fab:fab_labelStyle="@style/menu_labels_style"
+            fab:fab_labelsPosition="left"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+
+            >
+
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    </RelativeLayout>
+
+
+    <include layout="@layout/layout_main_bottom" />
 
 </LinearLayout>
