@@ -14,13 +14,13 @@
         style="@style/rb_bottom"
         android:checked="true"
         android:drawableTop="@drawable/bg_bottom_navigation_eating"
-        android:text="电影" />
+        android:text="农家乐" />
 
     <RadioButton
         android:id="@+id/rb_cinema"
         style="@style/rb_bottom"
         android:drawableTop="@drawable/bg_bottom_navigation_tranffic"
-        android:text="影院" />
+        android:text="村路导航" />
 
     <RadioButton
         android:id="@+id/rb_discover"

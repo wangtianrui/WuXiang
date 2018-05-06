@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -97,6 +100,7 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
+
     /**
      * fragment显示时才加载数据
      */
@@ -134,11 +138,6 @@ public abstract class BaseFragment extends Fragment {
     protected void hideProgressBar() {
     }
 
-    /**
-     * 初始化recyclerView
-     */
-    protected void initRecyclerView() {
-    }
 
     /**
      * 初始化refreshLayout
