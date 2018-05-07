@@ -1,4 +1,4 @@
-package wuxiang.miku.scorpio.wuxiang.adapters;
+package wuxiang.miku.scorpio.wuxiang.adapters.eating;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.widget.Toast;
 
+import wuxiang.miku.scorpio.wuxiang.modules.eating.childfragment.find.FindFragment;
 import wuxiang.miku.scorpio.wuxiang.modules.eating.childfragment.hot.HotFragment;
 import wuxiang.miku.scorpio.wuxiang.utils.ToastUtils;
 
@@ -35,7 +36,7 @@ public class EatingPagerAdapter extends FragmentPagerAdapter {
                     fragments[position] = HotFragment.newInstance();
                     break;
                 case 2:
-                    fragments[position] = HotFragment.newInstance();
+                    fragments[position] = FindFragment.newInstance();
                     break;
                 default:
                     break;

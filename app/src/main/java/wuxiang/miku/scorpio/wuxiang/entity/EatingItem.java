@@ -8,7 +8,7 @@ import wuxiang.miku.scorpio.wuxiang.utils.ConstantUtils;
  * Created by Wangtianrui on 2018/5/6.
  */
 
-public class HotEatingItem implements MultiItemEntity {
+public class EatingItem implements MultiItemEntity {
     private String name;
     private String desc;
     private String information;

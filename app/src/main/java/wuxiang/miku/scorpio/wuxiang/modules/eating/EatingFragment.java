@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import wuxiang.miku.scorpio.wuxiang.R;
-import wuxiang.miku.scorpio.wuxiang.adapters.EatingPagerAdapter;
+import wuxiang.miku.scorpio.wuxiang.adapters.eating.EatingPagerAdapter;
 import wuxiang.miku.scorpio.wuxiang.base.BaseFragment;
 import wuxiang.miku.scorpio.wuxiang.modules.main.MainActivity;
 import wuxiang.miku.scorpio.wuxiang.utils.ToastUtils;

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="114dp"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/fl_hot_movie"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/iv_hot_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/icon_default" />
+
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:src="@drawable/ic_video_play" />-->
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/ll_hot_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/fl_hot_movie"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_hot_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/sp_16"
+                tools:text="中北酒店" />
+
+            <ImageView
+                android:id="@+id/iv_ver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:src="@drawable/ic_bed" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tv_hot_audience_linearlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_hot_name"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_6"
+            android:layout_toRightOf="@id/fl_hot_movie"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:src="@drawable/ic_local" />
+
+            <TextView
+                android:id="@+id/tv_hot_audience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="距离你1000米" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_hot_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_hot_audience_linearlayout"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_6"
+            android:textColor="@color/text_yellow"
+            android:layout_toRightOf="@id/fl_hot_movie"
+            tools:text="外星来访客，目的难预测" />
+
+        <TextView
+            android:id="@+id/tv_hot_showInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_hot_desc"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_4"
+            android:textColor="@color/text_blue"
+            android:layout_toRightOf="@id/fl_hot_movie"
+            tools:text="本月有973名顾客光顾此店" />
+
+
+        <TextView
+            android:id="@+id/tv_buy_ticket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_tv_buy"
+            android:text="查看详情"
+            android:textColor="@color/colorAccent" />
+
+    </RelativeLayout>
+
+    <include layout="@layout/layout_1px_divider" />
+
+</LinearLayout>
