@@ -1,8 +1,10 @@
 package wuxiang.miku.scorpio.wuxiang.modules.eating.childfragment.hot;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
@@ -15,6 +17,7 @@ import wuxiang.miku.scorpio.wuxiang.R;
 import wuxiang.miku.scorpio.wuxiang.adapters.eating.HotEatingListAdapter;
 import wuxiang.miku.scorpio.wuxiang.base.BaseFragment;
 import wuxiang.miku.scorpio.wuxiang.entity.EatingItem;
+import wuxiang.miku.scorpio.wuxiang.modules.eating.restaurantdetail.RestaurantDetailActivity;
 import wuxiang.miku.scorpio.wuxiang.utils.ToastUtils;
 import wuxiang.miku.scorpio.wuxiang.view.MyPullToRefreshListener;
 import wuxiang.miku.scorpio.wuxiang.view.ProgressLayout;
@@ -37,6 +40,7 @@ public class HotFragment extends BaseFragment {
     private HotEatingListAdapter hotEatingListAdapter;
     private MyPullToRefreshListener pullToRefreshListener;
 
+    private Context mContext;
 
     public static HotFragment newInstance() {
         return new HotFragment();
@@ -52,6 +56,7 @@ public class HotFragment extends BaseFragment {
         loadData();
         initRecyclerView();
         initPullRefresh();
+        mContext = getContext();
     }
 
     @Override
@@ -66,6 +71,12 @@ public class HotFragment extends BaseFragment {
     private void initRecyclerView() {
         hotEatingListAdapter = new HotEatingListAdapter(mList);
         hotEatingListAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
+        hotEatingListAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                RestaurantDetailActivity.startRestaurantDetailActivity(mContext);
+            }
+        });
         hotEatingListAdapter.isFirstOnly(false);
         rvHotRecyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         rvHotRecyclerview.setAdapter(hotEatingListAdapter);
@@ -94,7 +105,7 @@ public class HotFragment extends BaseFragment {
         pullToRefreshListener.setOnRefreshListener(new MyPullToRefreshListener.OnRefreshListener() {
             @Override
             public void refresh() {
-                ToastUtils.showShortToast("shuaxin");
+                ToastUtils.showShortToast("刷新");
                 pullToRefreshListener.refreshDone();
             }
         });

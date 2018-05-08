@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true">
+    <!--clipToPadding = false-->
+    <!--令布局可以延伸到状态栏-->
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/sc_movie_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_restaurant_head_info" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp">
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_14"
+                android:background="@color/divider_normal" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/detail_photo_show_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_14"
+                android:background="@color/divider_normal" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/detail_comment_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <!--<include layout="@layout/layout_movie_detail_title" />-->
+
+
+</FrameLayout>
+
+
+
+
+
+
+
