@@ -15,10 +15,12 @@ public class ConstantUtils {
     };
 
     public static String[] FIND_HEAD_FOOD_LIST1 = {
-            "全部", "川菜", "", "鲁菜", "粤菜", "闽菜", "湘菜", "苏菜", "浙菜", "西点"
+            "全部", "川菜", "鲁菜", "粤菜", "闽菜", "湘菜", "苏菜", "浙菜", "西点"
     };
 
     public static String[] FIND_HEAD_DISTANCE_LIST1 = {
             "距离无所谓", "距离近"
     };
+
+    public static String TAG = "MyTest";
 }

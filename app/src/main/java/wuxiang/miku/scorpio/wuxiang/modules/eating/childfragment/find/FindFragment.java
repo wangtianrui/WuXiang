@@ -90,7 +90,7 @@ public class FindFragment extends BaseMVPFragment {
 
         adapter = new FindEatingListAdapter(mList);
         adapter.isFirstOnly(false);
-        adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
+        adapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         eatingFindRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter.addHeaderView(header);
         eatingFindRecycler.setAdapter(adapter);
