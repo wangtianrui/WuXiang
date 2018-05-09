@@ -22,11 +22,90 @@
 
             <include layout="@layout/layout_restaurant_head_info" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="130dp">
+                android:layout_height="130dp"
+                android:layout_margin="@dimen/dp_14">
 
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="花费：">
+
+                        </TextView>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="@dimen/dp_12"
+                            android:src="@drawable/ic_money" />
+
+                        <TextView
+                            android:id="@+id/detail_cost_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:text="详细电话咨询">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="咨询电话：">
+
+                        </TextView>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="@dimen/dp_12"
+                            android:src="@drawable/ic_call" />
+
+                        <TextView
+                            android:id="@+id/detail_call_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:text="店家未填写">
+
+                        </TextView>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/detail_make_call_button"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="24dp"
+                    android:src="@drawable/ic_make_call" />
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -39,6 +118,19 @@
                 android:layout_height="150dp">
 
             </android.support.v7.widget.RecyclerView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_14"
+                android:background="@color/divider_normal" />
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/flowLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/dp_14"
+                app:max_select="1" />
 
             <View
                 android:layout_width="match_parent"
@@ -58,7 +150,8 @@
     </android.support.v4.widget.NestedScrollView>
 
 
-    <!--<include layout="@layout/layout_movie_detail_title" />-->
+
+    <include layout="@layout/layout_movie_detail_title" />
 
 
 </FrameLayout>
