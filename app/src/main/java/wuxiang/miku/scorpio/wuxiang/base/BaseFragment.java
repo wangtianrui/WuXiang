@@ -58,7 +58,10 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        bind.unbind();
+        //
+        if(bind != bind.EMPTY){
+            bind.unbind();
+        }
     }
 
     /**

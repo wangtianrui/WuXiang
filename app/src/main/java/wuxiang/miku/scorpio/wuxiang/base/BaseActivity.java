@@ -83,6 +83,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        bind.unbind();
+//        if(bind!=bind.EMPTY){
+//            bind.unbind();
+//        }
     }
 }

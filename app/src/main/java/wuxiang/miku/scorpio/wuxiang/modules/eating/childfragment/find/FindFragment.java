@@ -57,7 +57,7 @@ public class FindFragment extends BaseMVPFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+//        unbinder.unbind();
     }
 
     /**

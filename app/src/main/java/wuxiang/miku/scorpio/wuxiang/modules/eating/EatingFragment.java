@@ -29,7 +29,7 @@ import wuxiang.miku.scorpio.wuxiang.utils.ToastUtils;
  * Created by Wangtianrui on 2018/5/5.
  */
 
-public class EatingFragment extends BaseFragment  {
+public class EatingFragment extends BaseFragment {
     @BindView(R.id.eating_city)
     TextView eatingCity;
     @BindView(R.id.view_indicator)
@@ -77,7 +77,9 @@ public class EatingFragment extends BaseFragment  {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+//        if (unbinder != unbinder.EMPTY) {
+//            unbinder.unbind();
+//        }
     }
 
     @OnClick({R.id.eating_city, R.id.eating_hot, R.id.eating_nearby, R.id.eating_find})

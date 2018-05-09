@@ -33,6 +33,7 @@ import wuxiang.miku.scorpio.wuxiang.base.BaseMVPActivity;
 import wuxiang.miku.scorpio.wuxiang.entity.CommentItem;
 import wuxiang.miku.scorpio.wuxiang.entity.DetailPhotoItem;
 import wuxiang.miku.scorpio.wuxiang.entity.TagItem;
+import wuxiang.miku.scorpio.wuxiang.utils.GlideUtils;
 import wuxiang.miku.scorpio.wuxiang.utils.ToastUtils;
 import wuxiang.miku.scorpio.wuxiang.utils.UiUtils;
 
@@ -195,7 +196,7 @@ public class RestaurantDetailActivity extends BaseMVPActivity {
     private void loadData() {
         TagItem tagItem = new TagItem();
 
-        tagItem.setTagName("好评");
+        tagItem.setTagName("好评 123124");
         for (int i = 0; i < 5; i++) {
             tagItem.setCount(i);
             mTags.add(tagItem);
@@ -209,6 +210,10 @@ public class RestaurantDetailActivity extends BaseMVPActivity {
         for (int i = 0; i < 10; i++) {
             mPhotos.add(new DetailPhotoItem());
         }
+        /**
+         * 初始化店家相关数据
+         */
+        GlideUtils.loadImage(mContext, R.drawable.test_image, ivRestaurantImg);
     }
 
 

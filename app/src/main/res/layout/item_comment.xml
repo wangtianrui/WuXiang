@@ -112,11 +112,12 @@
 
         <TextView
             android:id="@+id/tv_comment_count"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_10"
-            android:drawableLeft="@drawable/ic_comment"
             android:drawablePadding="@dimen/dp_6" />
+        <!--android:drawableLeft="@drawable/ic_comment"-->
+
 
     </LinearLayout>
 
