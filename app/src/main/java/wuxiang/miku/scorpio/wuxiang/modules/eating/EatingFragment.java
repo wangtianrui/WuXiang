@@ -23,7 +23,9 @@ import wuxiang.miku.scorpio.wuxiang.R;
 import wuxiang.miku.scorpio.wuxiang.adapters.eating.EatingPagerAdapter;
 import wuxiang.miku.scorpio.wuxiang.base.BaseFragment;
 import wuxiang.miku.scorpio.wuxiang.modules.main.MainActivity;
+import wuxiang.miku.scorpio.wuxiang.utils.GlideUtils;
 import wuxiang.miku.scorpio.wuxiang.utils.ToastUtils;
+import wuxiang.miku.scorpio.wuxiang.view.CircleImageView;
 
 /**
  * Created by Wangtianrui on 2018/5/5.
@@ -31,7 +33,7 @@ import wuxiang.miku.scorpio.wuxiang.utils.ToastUtils;
 
 public class EatingFragment extends BaseFragment {
     @BindView(R.id.eating_city)
-    TextView eatingCity;
+    CircleImageView userAvatar;
     @BindView(R.id.view_indicator)
     View view;
     @BindView(R.id.eating_hot)
@@ -243,5 +245,9 @@ public class EatingFragment extends BaseFragment {
 
             }
         });
+    }
+
+    private void initAvatar() {
+        GlideUtils.loadImage(EatingFragment.this,R.drawable.user_avatar_test,(CircleImageView)userAvatar);
     }
 }

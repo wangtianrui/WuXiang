@@ -11,6 +11,7 @@ public class ConstantUtils {
     public static int TYPE_FIND_NORMAL = 0;
     public static int TYPE_DETAIL_PHOTO = 0;
 
+
     public static String[] FIND_HEAD_REASTAURANT_LIST1 = {
             "全部", "农家乐", "酒店", "火锅店", "烤肉店", "烧烤店", "水吧", "中餐馆", "野炊", "自助餐厅"
     };

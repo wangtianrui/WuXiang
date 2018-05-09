@@ -188,6 +188,16 @@ public class RestaurantDetailActivity extends BaseMVPActivity {
         detailPhotoShowRecyclerview.setLayoutManager(new LinearLayoutManager(mContext,
                 LinearLayoutManager.HORIZONTAL, false));
         detailPhotoShowRecyclerview.setAdapter(detailPhotoAdapter);
+
+        /**
+         * 初始化回退键
+         */
+        rlBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     /**

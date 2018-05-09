@@ -83,6 +83,7 @@ public class FindHeadChoiceAdapter extends RecyclerView.Adapter<FindHeadChoiceHo
                     if (holder.isClicked) {
                         holder.tvTextType.setBackground(mContext.getDrawable(R.drawable.bg_tv_movie_type_pre));
                         holder.tvTextType.setTextColor(mContext.getColor(R.color.white));
+                        isChoosed = false;
                     } else {
                         holder.tvTextType.setBackground(mContext.getDrawable(R.drawable.bg_tv_movie_type_nor));
                         holder.tvTextType.setTextColor(mContext.getColor(R.color.black_semi_transparent));

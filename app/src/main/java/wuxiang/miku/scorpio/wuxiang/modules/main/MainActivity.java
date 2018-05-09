@@ -2,7 +2,12 @@ package wuxiang.miku.scorpio.wuxiang.modules.main;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
@@ -11,13 +16,29 @@ import butterknife.BindView;
 import wuxiang.miku.scorpio.wuxiang.R;
 import wuxiang.miku.scorpio.wuxiang.base.BaseActivity;
 import wuxiang.miku.scorpio.wuxiang.modules.eating.EatingFragment;
+import wuxiang.miku.scorpio.wuxiang.modules.find.FindFragment;
 import wuxiang.miku.scorpio.wuxiang.utils.ToastUtils;
 
 public class MainActivity extends BaseActivity {
     @BindView(R.id.floationg_action_menu)
     FloatingActionsMenu floationgActionMenu;
+    @BindView(R.id.container_main)
+    FrameLayout containerMain;
+    @BindView(R.id.rb_movie)
+    RadioButton rbMovie;
+    @BindView(R.id.rb_cinema)
+    RadioButton rbCinema;
+    @BindView(R.id.rb_discover)
+    RadioButton rbDiscover;
+    @BindView(R.id.rb_mine)
+    RadioButton rbMine;
+    @BindView(R.id.rg_main)
+    RadioGroup rgMain;
+    @BindView(R.id.activity_main)
+    LinearLayout activityMain;
     private Fragment[] fragments;
     private EatingFragment eatingFragment;
+    private FindFragment findFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +54,7 @@ public class MainActivity extends BaseActivity {
     public void initViews(Bundle savedInstanceState) {
         initFragments();
         initFloatingMenu();
+        setupRg();
     }
 
     @Override
@@ -50,16 +72,23 @@ public class MainActivity extends BaseActivity {
      */
     private void initFragments() {
         eatingFragment = EatingFragment.newInstance();
+        findFragment = FindFragment.newInstance();
 
         fragments = new Fragment[]{
-                eatingFragment
+                eatingFragment,
+                findFragment
         };
         getSupportFragmentManager()
                 .beginTransaction()
+                .add(R.id.container_main, findFragment)
                 .add(R.id.container_main, eatingFragment)
-                .show(eatingFragment).commit();
+                .commit();
+        switchFragment(0);
     }
 
+    /**
+     * 初始化悬浮钮
+     */
     private void initFloatingMenu() {
         FloatingActionButton actionButtonActivate = new FloatingActionButton(getBaseContext());
         actionButtonActivate.setTitle("实物AR扫描");
@@ -73,5 +102,78 @@ public class MainActivity extends BaseActivity {
             }
         });
         floationgActionMenu.addButton(actionButtonActivate);
+    }
+
+    /**
+     * fragment切换
+     */
+    private void switchFragment(int index) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        switch (index) {
+            case 0:
+                transaction
+                        .show(eatingFragment)
+                        .hide(findFragment);
+//                        .hide(discoverFragment)
+//                        .hide(mineFragment)
+                eatingFragment.setUserVisibleHint(true);
+                findFragment.setUserVisibleHint(false);
+//                discoverFragment.setUserVisibleHint(false);
+//                mineFragment.setUserVisibleHint(false);
+                break;
+            case 2:
+                transaction
+                        .show(findFragment)
+                        .hide(eatingFragment);
+//                        .hide(discoverFragment)
+//                        .hide(mineFragment)
+                findFragment.setUserVisibleHint(true);
+                eatingFragment.setUserVisibleHint(false);
+//                discoverFragment.setUserVisibleHint(false);
+//                mineFragment.setUserVisibleHint(false);
+                break;
+            case 3:
+                transaction
+                        .show(findFragment)
+                        .hide(eatingFragment);
+//                        .hide(discoverFragment)
+//                        .hide(mineFragment)
+                findFragment.setUserVisibleHint(true);
+                eatingFragment.setUserVisibleHint(false);
+//                discoverFragment.setUserVisibleHint(false);
+//                mineFragment.setUserVisibleHint(false);
+                break;
+            case 4:
+                break;
+            default:
+                break;
+
+        }
+        transaction.commit();
+    }
+
+    /**
+     * RadioGroup点击监听
+     */
+    private void setupRg() {
+        rgMain.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.rb_movie:
+                        switchFragment(0);
+                        break;
+                    case R.id.rb_cinema:
+                        switchFragment(1);
+                        break;
+                    case R.id.rb_discover:
+                        switchFragment(2);
+                        break;
+                    case R.id.rb_mine:
+                        switchFragment(3);
+                        break;
+                }
+            }
+        });
     }
 }
