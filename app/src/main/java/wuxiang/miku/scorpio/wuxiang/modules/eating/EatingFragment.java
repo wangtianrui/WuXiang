@@ -1,5 +1,6 @@
 package wuxiang.miku.scorpio.wuxiang.modules.eating;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -32,8 +33,7 @@ import wuxiang.miku.scorpio.wuxiang.view.CircleImageView;
  */
 
 public class EatingFragment extends BaseFragment {
-    @BindView(R.id.eating_city)
-    CircleImageView userAvatar;
+
     @BindView(R.id.view_indicator)
     View view;
     @BindView(R.id.eating_hot)
@@ -50,7 +50,10 @@ public class EatingFragment extends BaseFragment {
     Unbinder unbinder1;
     @BindView(R.id.search_view)
     MaterialSearchView searchView;
+    @BindView(R.id.eating_city)
+    CircleImageView eatingCity;
 
+    private Context mContext;
     private FrameLayout.LayoutParams params;
 
 
@@ -71,9 +74,12 @@ public class EatingFragment extends BaseFragment {
     @Override
     public void finishCreateView(Bundle state) {
         setHasOptionsMenu(true);
+        mContext = getContext();
         initToolbar();
         initSearchView();
         initViewPager();
+        initAvatar();
+
     }
 
     @Override
@@ -82,6 +88,7 @@ public class EatingFragment extends BaseFragment {
 //        if (unbinder != unbinder.EMPTY) {
 //            unbinder.unbind();
 //        }
+        //null.unbind();
     }
 
     @OnClick({R.id.eating_city, R.id.eating_hot, R.id.eating_nearby, R.id.eating_find})
@@ -248,6 +255,6 @@ public class EatingFragment extends BaseFragment {
     }
 
     private void initAvatar() {
-        GlideUtils.loadImage(EatingFragment.this,R.drawable.user_avatar_test,(CircleImageView)userAvatar);
+        GlideUtils.loadImage(mContext, R.drawable.user_avatar_test, (CircleImageView) eatingCity);
     }
 }
