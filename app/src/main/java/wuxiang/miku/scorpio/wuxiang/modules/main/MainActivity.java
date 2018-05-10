@@ -17,6 +17,8 @@ import wuxiang.miku.scorpio.wuxiang.R;
 import wuxiang.miku.scorpio.wuxiang.base.BaseActivity;
 import wuxiang.miku.scorpio.wuxiang.modules.eating.EatingFragment;
 import wuxiang.miku.scorpio.wuxiang.modules.find.FindFragment;
+import wuxiang.miku.scorpio.wuxiang.modules.my.InformationFragment;
+import wuxiang.miku.scorpio.wuxiang.modules.navigation.NavigationFragment;
 import wuxiang.miku.scorpio.wuxiang.utils.ToastUtils;
 
 public class MainActivity extends BaseActivity {
@@ -39,6 +41,8 @@ public class MainActivity extends BaseActivity {
     private Fragment[] fragments;
     private EatingFragment eatingFragment;
     private FindFragment findFragment;
+    private InformationFragment informationFragment;
+    private NavigationFragment navigationFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,15 +77,20 @@ public class MainActivity extends BaseActivity {
     private void initFragments() {
         eatingFragment = EatingFragment.newInstance();
         findFragment = FindFragment.newInstance();
-
+        informationFragment = InformationFragment.newInstance();
+        navigationFragment = NavigationFragment.newInstance();
         fragments = new Fragment[]{
                 eatingFragment,
-                findFragment
+                navigationFragment,
+                findFragment,
+                informationFragment
         };
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.container_main, findFragment)
                 .add(R.id.container_main, eatingFragment)
+                .add(R.id.container_main, navigationFragment)
+                .add(R.id.container_main, informationFragment)
                 .commit();
         switchFragment(0);
     }
@@ -113,37 +122,60 @@ public class MainActivity extends BaseActivity {
             case 0:
                 transaction
                         .show(eatingFragment)
-                        .hide(findFragment);
-//                        .hide(discoverFragment)
+                        .hide(findFragment)
+                        .hide(navigationFragment)
+                        .hide(informationFragment);
 //                        .hide(mineFragment)
                 eatingFragment.setUserVisibleHint(true);
                 findFragment.setUserVisibleHint(false);
+                navigationFragment.setUserVisibleHint(false);
+                informationFragment.setUserVisibleHint(false);
+//                discoverFragment.setUserVisibleHint(false);
+//                mineFragment.setUserVisibleHint(false);
+                break;
+            case 1:
+                transaction
+                        .show(navigationFragment)
+                        .hide(eatingFragment)
+                        .hide(findFragment)
+                        .hide(informationFragment);
+//                        .hide(discoverFragment)
+//                        .hide(mineFragment)
+                navigationFragment.setUserVisibleHint(true);
+                findFragment.setUserVisibleHint(false);
+                informationFragment.setUserVisibleHint(false);
+                eatingFragment.setUserVisibleHint(false);
 //                discoverFragment.setUserVisibleHint(false);
 //                mineFragment.setUserVisibleHint(false);
                 break;
             case 2:
                 transaction
                         .show(findFragment)
-                        .hide(eatingFragment);
+                        .hide(navigationFragment)
+                        .hide(eatingFragment)
+                        .hide(informationFragment);
 //                        .hide(discoverFragment)
 //                        .hide(mineFragment)
+                navigationFragment.setUserVisibleHint(false);
                 findFragment.setUserVisibleHint(true);
                 eatingFragment.setUserVisibleHint(false);
+                informationFragment.setUserVisibleHint(false);
 //                discoverFragment.setUserVisibleHint(false);
 //                mineFragment.setUserVisibleHint(false);
                 break;
             case 3:
                 transaction
-                        .show(findFragment)
-                        .hide(eatingFragment);
-//                        .hide(discoverFragment)
+                        .show(informationFragment)
+                        .hide(eatingFragment)
+                        .hide(navigationFragment)
+                        .hide(findFragment);
 //                        .hide(mineFragment)
-                findFragment.setUserVisibleHint(true);
+                navigationFragment.setUserVisibleHint(false);
+                informationFragment.setUserVisibleHint(true);
                 eatingFragment.setUserVisibleHint(false);
+                findFragment.setUserVisibleHint(false);
 //                discoverFragment.setUserVisibleHint(false);
 //                mineFragment.setUserVisibleHint(false);
-                break;
-            case 4:
                 break;
             default:
                 break;
