@@ -120,6 +120,7 @@ public class MainActivity extends BaseActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         switch (index) {
             case 0:
+                floationgActionMenu.setVisibility(View.VISIBLE);
                 transaction
                         .show(eatingFragment)
                         .hide(findFragment)
@@ -134,6 +135,7 @@ public class MainActivity extends BaseActivity {
 //                mineFragment.setUserVisibleHint(false);
                 break;
             case 1:
+                floationgActionMenu.setVisibility(View.INVISIBLE);
                 transaction
                         .show(navigationFragment)
                         .hide(eatingFragment)
@@ -149,6 +151,7 @@ public class MainActivity extends BaseActivity {
 //                mineFragment.setUserVisibleHint(false);
                 break;
             case 2:
+                floationgActionMenu.setVisibility(View.VISIBLE);
                 transaction
                         .show(findFragment)
                         .hide(navigationFragment)
@@ -164,6 +167,7 @@ public class MainActivity extends BaseActivity {
 //                mineFragment.setUserVisibleHint(false);
                 break;
             case 3:
+                floationgActionMenu.setVisibility(View.INVISIBLE);
                 transaction
                         .show(informationFragment)
                         .hide(eatingFragment)
