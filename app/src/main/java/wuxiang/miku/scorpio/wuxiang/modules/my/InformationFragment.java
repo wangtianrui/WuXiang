@@ -17,7 +17,7 @@ import wuxiang.miku.scorpio.wuxiang.R;
 import wuxiang.miku.scorpio.wuxiang.base.BaseMVPFragment;
 import wuxiang.miku.scorpio.wuxiang.utils.GlideUtils;
 import wuxiang.miku.scorpio.wuxiang.view.CircleImageView;
-
+//
 /**
  * Created by Wangtianrui on 2018/5/10.
  */
