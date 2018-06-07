@@ -1,5 +1,6 @@
 package wuxiang.miku.scorpio.wuxiang.modules.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -15,6 +16,7 @@ import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import butterknife.BindView;
 import wuxiang.miku.scorpio.wuxiang.R;
 import wuxiang.miku.scorpio.wuxiang.base.BaseActivity;
+import wuxiang.miku.scorpio.wuxiang.modules.ar.ArActivity;
 import wuxiang.miku.scorpio.wuxiang.modules.eating.EatingFragment;
 import wuxiang.miku.scorpio.wuxiang.modules.find.FindFragment;
 import wuxiang.miku.scorpio.wuxiang.modules.my.InformationFragment;
@@ -107,7 +109,8 @@ public class MainActivity extends BaseActivity {
         actionButtonActivate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.showShortToast("纸悦动");
+                Intent intent = new Intent(MainActivity.this, ArActivity.class);
+                startActivity(intent);
             }
         });
         floationgActionMenu.addButton(actionButtonActivate);
