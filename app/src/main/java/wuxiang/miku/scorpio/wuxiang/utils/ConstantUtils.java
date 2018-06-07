@@ -7,6 +7,12 @@ import java.util.ArrayList;
  */
 
 public class ConstantUtils {
+
+    //百度AR用到的常量
+    public static final String BAIDUARAPPID = "11194918";
+    public static final String BAIDUARAPIKEY = "XrXHrvL9OTFNmRLGzERaN8LY";
+    public static final String BAIDUARSECRETKEY = "ejMd0EmY58RuOMMVApgYWNcm9czeWsUq";
+
     public static int TYPE_HOT_NORMAL = 0;
     public static int TYPE_FIND_NORMAL = 0;
     public static int TYPE_DETAIL_PHOTO = 0;
