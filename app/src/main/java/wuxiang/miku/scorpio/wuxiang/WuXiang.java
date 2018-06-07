@@ -1,6 +1,10 @@
 package wuxiang.miku.scorpio.wuxiang;
 
 import android.app.Application;
+import android.os.Environment;
+
+
+import wuxiang.miku.scorpio.wuxiang.utils.ToastUtils;
 
 /**
  * Created by Wangtianrui on 2018/5/6.
@@ -8,6 +12,7 @@ import android.app.Application;
 
 public class WuXiang extends Application {
     public static WuXiang mInstance;
+
 
     @Override
     public void onCreate() {

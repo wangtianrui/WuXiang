@@ -1,19 +1,32 @@
 package wuxiang.miku.scorpio.wuxiang.modules.main;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.os.Environment;
 
+
+import com.baidu.mapapi.SDKInitializer;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import wuxiang.miku.scorpio.wuxiang.R;
+
 import wuxiang.miku.scorpio.wuxiang.base.BaseActivity;
 import wuxiang.miku.scorpio.wuxiang.modules.eating.EatingFragment;
 import wuxiang.miku.scorpio.wuxiang.modules.find.FindFragment;
@@ -44,6 +57,7 @@ public class MainActivity extends BaseActivity {
     private InformationFragment informationFragment;
     private NavigationFragment navigationFragment;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +70,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initViews(Bundle savedInstanceState) {
+        initMap();
         initFragments();
         initFloatingMenu();
         setupRg();
@@ -212,4 +227,45 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+
+    /**
+     * 初始化百度地图
+     */
+    private void initMap() {
+        //在使用SDK各组件之前初始化context信息，传入ApplicationContext
+        //注意该方法要再setContentView方法之前实现
+        SDKInitializer.initialize(getApplicationContext());
+//        mSDCardPath = Environment.getDataDirectory().getPath();
+//        APP_FOLDER_NAME = this.getCacheDir().getPath();
+//        BaiduNaviManagerFactory.getBaiduNaviManager().init(MainActivity.this,
+//                mSDCardPath, APP_FOLDER_NAME, new IBaiduNaviManager.INaviInitListener() {
+//
+//                    @Override
+//                    public void onAuthResult(int status, String msg) {
+//                        if (0 == status) {
+//                            authinfo = "key校验成功!";
+//                        } else {
+//                            authinfo = "key校验失败, " + msg;
+//                        }
+//                        ToastUtils.showShortToast(authinfo);
+//                    }
+//
+//                    @Override
+//                    public void initStart() {
+//                        ToastUtils.showShortToast(authinfo);
+//                    }
+//
+//                    @Override
+//                    public void initSuccess() {
+//                        ToastUtils.showShortToast("初始化成功");
+//                    }
+//
+//                    @Override
+//                    public void initFailed() {
+//                        ToastUtils.showShortToast("初始化失败");
+//                    }
+//                });
+    }
+
+
 }

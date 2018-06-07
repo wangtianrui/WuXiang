@@ -12,8 +12,14 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+            //说明so的路径为该libs路径，关联所有地图SDK的so文件
         }
     }
 }
@@ -46,5 +52,6 @@ dependencies {
     compile 'com.hyman:flowlayout-lib:1.1.2'
     //轮播
     compile 'com.github.pinguo-zhouwei:MZBannerView:v2.0.1'
-
+    //baidu map
+    implementation files('libs/BaiduLBS_Android.jar')
 }
