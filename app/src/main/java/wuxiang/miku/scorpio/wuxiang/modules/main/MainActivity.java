@@ -1,8 +1,12 @@
 package wuxiang.miku.scorpio.wuxiang.modules.main;
 
+<<<<<<< HEAD
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+=======
+import android.content.Intent;
+>>>>>>> 8137fc59e9aa3307253bd7fae61ebfb3a8da113b
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -28,6 +32,7 @@ import butterknife.BindView;
 import wuxiang.miku.scorpio.wuxiang.R;
 
 import wuxiang.miku.scorpio.wuxiang.base.BaseActivity;
+import wuxiang.miku.scorpio.wuxiang.modules.ar.ArActivity;
 import wuxiang.miku.scorpio.wuxiang.modules.eating.EatingFragment;
 import wuxiang.miku.scorpio.wuxiang.modules.find.FindFragment;
 import wuxiang.miku.scorpio.wuxiang.modules.my.InformationFragment;
@@ -122,7 +127,8 @@ public class MainActivity extends BaseActivity {
         actionButtonActivate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.showShortToast("纸悦动");
+                Intent intent = new Intent(MainActivity.this, ArActivity.class);
+                startActivity(intent);
             }
         });
         floationgActionMenu.addButton(actionButtonActivate);
