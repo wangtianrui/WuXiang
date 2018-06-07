@@ -50,10 +50,7 @@ dependencies {
     compile 'com.hyman:flowlayout-lib:1.1.2'
     //轮播
     compile 'com.github.pinguo-zhouwei:MZBannerView:v2.0.1'
-<<<<<<< HEAD
     //baidu map
     implementation files('libs/BaiduLBS_Android.jar')
-=======
     implementation files('libs/dumixar.jar')
->>>>>>> 8137fc59e9aa3307253bd7fae61ebfb3a8da113b
 }

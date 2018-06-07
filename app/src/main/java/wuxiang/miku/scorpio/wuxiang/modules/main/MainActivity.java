@@ -1,18 +1,14 @@
 package wuxiang.miku.scorpio.wuxiang.modules.main;
 
-<<<<<<< HEAD
-import android.Manifest;
-import android.content.Context;
-import android.content.pm.PackageManager;
-=======
+
+
 import android.content.Intent;
->>>>>>> 8137fc59e9aa3307253bd7fae61ebfb3a8da113b
+
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
+
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;

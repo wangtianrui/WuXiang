@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="wuxiang.miku.scorpio.wuxiang">
 
-<<<<<<< HEAD
+
     <!-- 电话 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!-- 读写sd卡 -->
@@ -24,7 +24,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <!-- 获取wifi状态 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-=======
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -35,7 +35,7 @@
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
->>>>>>> 8137fc59e9aa3307253bd7fae61ebfb3a8da113b
+
 
     <application
         android:name=".WuXiang"
@@ -60,11 +60,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-=======
+
+
         <activity android:name=".modules.eating.restaurantdetail.RestaurantDetailActivity"></activity>
         <activity android:name=".modules.ar.ArActivity" />
->>>>>>> 8137fc59e9aa3307253bd7fae61ebfb3a8da113b
+
     </application>
 
 </manifest>
