@@ -1,5 +1,8 @@
 package wuxiang.miku.scorpio.wuxiang.adapters.findscenic;
 
+import android.content.Context;
+import android.view.View;
+
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.zhouwei.mzbanner.MZBannerView;
@@ -18,6 +21,7 @@ import wuxiang.miku.scorpio.wuxiang.utils.ConstantUtils;
  */
 
 public class ScenicRecyclerAdapter extends BaseMultiItemQuickAdapter<FindScenicItem, BaseViewHolder> {
+    private Context mContext;
 
     /**
      * Same as QuickAdapter#QuickAdapter(Context,int) but with
@@ -25,9 +29,10 @@ public class ScenicRecyclerAdapter extends BaseMultiItemQuickAdapter<FindScenicI
      *
      * @param data A new list is created out of this one to avoid mutable list
      */
-    public ScenicRecyclerAdapter(List<FindScenicItem> data) {
+    public ScenicRecyclerAdapter(List<FindScenicItem> data, Context context) {
         super(data);
         addItemType(ConstantUtils.TYPE_SCENIC, R.layout.item_find_fragment_scenic);
+        mContext = context;
     }
 
     @Override
@@ -38,6 +43,12 @@ public class ScenicRecyclerAdapter extends BaseMultiItemQuickAdapter<FindScenicI
             @Override
             public MZViewHolder createViewHolder() {
                 return new BannerViewHolder();
+            }
+        });
+        itemRowView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

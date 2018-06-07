@@ -48,6 +48,9 @@ public class DefualtActivity extends AppCompatActivity {
         if (!mPermissionList.isEmpty()) {
             String[] permissions2 = mPermissionList.toArray(new String[mPermissionList.size()]);
             ActivityCompat.requestPermissions(DefualtActivity.this, permissions2, 1);
+        }else{
+            Intent intent = new Intent(DefualtActivity.this, MainActivity.class);
+            startActivity(intent);
         }
     }
 

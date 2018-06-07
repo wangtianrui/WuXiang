@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="wuxiang.miku.scorpio.wuxiang">
 
-
     <!-- 电话 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!-- 读写sd卡 -->
@@ -24,7 +23,6 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <!-- 获取wifi状态 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -35,7 +33,6 @@
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-
 
     <application
         android:name=".WuXiang"
@@ -49,10 +46,8 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="29BAQ4HyZbXzw5i3O9wYBFTEIq7TtKn5" />
 
-        <activity android:name=".modules.main.MainActivity">
-
-        </activity>
-        <activity android:name=".modules.eating.restaurantdetail.RestaurantDetailActivity"></activity>
+        <activity android:name=".modules.main.MainActivity"></activity>
+        <activity android:name=".modules.eating.restaurantdetail.RestaurantDetailActivity" />
         <activity android:name=".modules.main.DefualtActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,11 +55,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <activity android:name=".modules.eating.restaurantdetail.RestaurantDetailActivity"></activity>
+        <activity android:name=".modules.eating.restaurantdetail.RestaurantDetailActivity" />
         <activity android:name=".modules.ar.ArActivity" />
-
+        <activity android:name=".modules.findscenic.ScenicActivity"></activity>
     </application>
 
 </manifest>

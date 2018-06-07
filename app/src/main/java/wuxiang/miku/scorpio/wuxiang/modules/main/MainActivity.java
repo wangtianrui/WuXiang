@@ -14,15 +14,11 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.os.Environment;
 
 
 import com.baidu.mapapi.SDKInitializer;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import wuxiang.miku.scorpio.wuxiang.R;
@@ -30,10 +26,9 @@ import wuxiang.miku.scorpio.wuxiang.R;
 import wuxiang.miku.scorpio.wuxiang.base.BaseActivity;
 import wuxiang.miku.scorpio.wuxiang.modules.ar.ArActivity;
 import wuxiang.miku.scorpio.wuxiang.modules.eating.EatingFragment;
-import wuxiang.miku.scorpio.wuxiang.modules.find.FindFragment;
+import wuxiang.miku.scorpio.wuxiang.modules.findscenic.FindFragment;
 import wuxiang.miku.scorpio.wuxiang.modules.my.InformationFragment;
 import wuxiang.miku.scorpio.wuxiang.modules.navigation.NavigationFragment;
-import wuxiang.miku.scorpio.wuxiang.utils.ToastUtils;
 
 public class MainActivity extends BaseActivity {
     @BindView(R.id.floationg_action_menu)

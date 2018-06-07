@@ -1,19 +1,14 @@
-package wuxiang.miku.scorpio.wuxiang.modules.find;
+package wuxiang.miku.scorpio.wuxiang.modules.findscenic;
 
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import wuxiang.miku.scorpio.wuxiang.R;
 import wuxiang.miku.scorpio.wuxiang.adapters.findscenic.ScenicRecyclerAdapter;
@@ -60,7 +55,7 @@ public class FindFragment extends BaseMVPFragment {
      * 初始化recycler
      */
     private void initRecycler() {
-        scenicRecyclerAdapter = new ScenicRecyclerAdapter(mList);
+        scenicRecyclerAdapter = new ScenicRecyclerAdapter(mList,mContext);
         scenicRecyclerAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         scenicRecyclerAdapter.isFirstOnly(false);
         findScenicRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
