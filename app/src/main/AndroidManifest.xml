@@ -55,7 +55,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".modules.eating.restaurantdetail.RestaurantDetailActivity" />
         <activity android:name=".modules.ar.ArActivity" />
         <activity android:name=".modules.findscenic.ScenicActivity"></activity>
     </application>

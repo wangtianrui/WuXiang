@@ -79,11 +79,6 @@ public class NavigationFragment extends Fragment {
 
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
 
     /**
      * 位置初始化
