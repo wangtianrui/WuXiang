@@ -25,13 +25,17 @@ public class DefualtActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_defualt);
         mContext = DefualtActivity.this;
-        askPermission();
+        try {
+            askPermission();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * 权限请求
      */
-    private void askPermission() {
+    private void askPermission() throws InterruptedException {
         String[] permissions = new String[]{
                 Manifest.permission.CALL_PHONE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -48,9 +52,21 @@ public class DefualtActivity extends AppCompatActivity {
         if (!mPermissionList.isEmpty()) {
             String[] permissions2 = mPermissionList.toArray(new String[mPermissionList.size()]);
             ActivityCompat.requestPermissions(DefualtActivity.this, permissions2, 1);
-        }else{
-            Intent intent = new Intent(DefualtActivity.this, MainActivity.class);
-            startActivity(intent);
+        } else {
+            final Intent intent = new Intent(DefualtActivity.this, MainActivity.class);
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    startActivity(intent);
+                    finish();
+                }
+            });
+            t.start();
         }
     }
 
@@ -64,7 +80,11 @@ public class DefualtActivity extends AppCompatActivity {
                 break;
             default:
                 ToastUtils.showShortToast("请授予所有权限，才能保证您的正常使用");
-                askPermission();
+                try {
+                    askPermission();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 break;
         }
     }
