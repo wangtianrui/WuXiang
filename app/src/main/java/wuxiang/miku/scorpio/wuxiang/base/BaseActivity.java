@@ -67,18 +67,16 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public void initRecyclerView() {
     }
-
     /**
      * 初始化refreshLayout
      */
     public void initRefreshLayout() {
     }
-
     /**
      * 设置数据显示
      */
     public void finishTask() {
     }
 
-//
+//1
 }
