@@ -24,10 +24,11 @@ public class FoodAdapter extends BaseQuickAdapter<FoodItem, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, FoodItem item) {
-        helper.setText(R.id.tv_food_name, "水煮肉片")
-                .setText(R.id.tv_food_restaurant_name, "温馨饭店")
-                .setText(R.id.tv_food_showInfo, "味蕾爆炸，劲爆无敌");
-        GlideUtils.loadImage(mContext, R.drawable.shuizhuroupiantest, (ImageView) helper.getView(R.id.iv_food_image));
+        helper.setText(R.id.tv_food_name, item.getName())
+                .setText(R.id.tv_food_restaurant_name, item.getEatingItem().getName())
+                .setText(R.id.tv_food_showInfo, item.getDesc())
+        .setText(R.id.tv_food_audience,"距离你"+item.getDistance()+"米");
+        GlideUtils.loadImage(mContext, item.getImage(), (ImageView) helper.getView(R.id.iv_food_image));
 
     }
 }

@@ -12,6 +12,15 @@ import wuxiang.miku.scorpio.wuxiang.utils.ConstantUtils;
 
 public class FindScenicItem implements MultiItemEntity {
     private ArrayList<Integer> imageUrls;
+    private String name ;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public ArrayList<Integer> getImageUrls() {
         return imageUrls;

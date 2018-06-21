@@ -17,6 +17,36 @@ public class FoodItem {
     private String name;
     private String desc;
     private EatingItem eatingItem;
+    private int distance;
+    private int image;
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public FoodItem() {
+    }
+
+    public FoodItem(String name, String desc, String eatingItem, int distance,int image) {
+        this.name = name;
+        this.desc = desc;
+        this.eatingItem = new EatingItem();
+        this.eatingItem.setName(eatingItem);
+        this.distance = distance;
+        this.image =image;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
 
     public String getName() {
         return name;

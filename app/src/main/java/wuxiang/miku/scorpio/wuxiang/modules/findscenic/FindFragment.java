@@ -29,6 +29,12 @@ public class FindFragment extends BaseMVPFragment {
     private ScenicRecyclerAdapter scenicRecyclerAdapter;
     private ArrayList<FindScenicItem> mList = new ArrayList<>();
     private ArrayList<Integer> bannerItemList = new ArrayList<>();
+    private ArrayList<Integer> bannerItemList1 = new ArrayList<>();
+    private ArrayList<Integer> bannerItemList2 = new ArrayList<>();
+    private ArrayList<Integer> bannerItemList3 = new ArrayList<>();
+    private ArrayList<Integer> bannerItemList4 = new ArrayList<>();
+
+
 
     /**
      * maker
@@ -70,11 +76,45 @@ public class FindFragment extends BaseMVPFragment {
         for (int i = 0; i < 5; i++) {
             bannerItemList.add(R.drawable.wuxiangtest);
         }
-        FindScenicItem findScenicItem = new FindScenicItem();
-        findScenicItem.setImageUrls(bannerItemList);
-        for (int i = 0; i < 10; i++) {
-            mList.add(findScenicItem);
+        for (int i = 0; i < 5; i++) {
+            bannerItemList1.add(R.drawable.s_test_1);
         }
+        for (int i = 0; i < 5; i++) {
+            bannerItemList2.add(R.drawable.s_test_2);
+        }
+        for (int i = 0; i < 5; i++) {
+            bannerItemList3.add(R.drawable.s_test_3);
+        }
+        for (int i = 0; i < 5; i++) {
+            bannerItemList4.add(R.drawable.s_test_4);
+        }
+
+        FindScenicItem findScenicItem1 = new FindScenicItem();
+        findScenicItem1.setImageUrls(bannerItemList);
+        findScenicItem1.setName("红军遗址");
+
+        FindScenicItem findScenicItem2 = new FindScenicItem();
+        findScenicItem2.setImageUrls(bannerItemList1);
+        findScenicItem2.setName("博物馆");
+
+        FindScenicItem findScenicItem3 = new FindScenicItem();
+        findScenicItem3.setImageUrls(bannerItemList2);
+        findScenicItem3.setName("武乡山村之境");
+
+        FindScenicItem findScenicItem4 = new FindScenicItem();
+        findScenicItem4.setImageUrls(bannerItemList3);
+        findScenicItem4.setName("桃花园");
+
+        FindScenicItem findScenicItem5 = new FindScenicItem();
+        findScenicItem5.setImageUrls(bannerItemList4);
+        findScenicItem5.setName("八路军司令指挥部");
+
+        mList.add(findScenicItem1);
+        mList.add(findScenicItem2);
+        mList.add(findScenicItem3);
+        mList.add(findScenicItem4);
+        mList.add(findScenicItem5);
+
     }
 
 

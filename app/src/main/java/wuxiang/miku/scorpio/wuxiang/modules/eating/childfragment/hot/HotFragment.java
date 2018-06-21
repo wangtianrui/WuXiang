@@ -89,12 +89,23 @@ public class HotFragment extends BaseFragment {
     protected void loadData() {
         EatingItem eatingItem = new EatingItem();
         eatingItem.setName("温馨农家乐");
-        eatingItem.setDesc("我最棒");
+        eatingItem.setDesc("新推出四川老火锅，欢迎品尝");
+        eatingItem.setImageResource( R.drawable.test_image);
+        eatingItem.setDistance(971);
 
-        for (int i = 0; i < 10; i++) {
-            eatingItem.setInformation(i + "");
-            mList.add(eatingItem);
-        }
+        EatingItem eatingItem1 = new EatingItem("圆坊菜","独到川味","提供渔具，环境优美",R.drawable.test_eating_1,1820);
+        EatingItem eatingItem2 = new EatingItem("拾味阁","特色菜","提供预定服务，川湘口味",R.drawable.test_eating_2,710);
+        EatingItem eatingItem3 = new EatingItem("东方1号","山西风味","新老顾客活动大放送，订餐就有！",R.drawable.test_eating_3,324);
+        EatingItem eatingItem4 = new EatingItem("风味汉老家","百年老店","特色菜品丰富，内有山西特产",R.drawable.test_eating_4,927);
+
+        mList.add(eatingItem);
+        mList.add(eatingItem1);
+        mList.add(eatingItem2);
+        mList.add(eatingItem3);
+        mList.add(eatingItem4);
+
+
+
     }
 
     /**

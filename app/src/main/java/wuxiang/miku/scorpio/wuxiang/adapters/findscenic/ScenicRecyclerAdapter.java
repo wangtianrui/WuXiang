@@ -47,6 +47,7 @@ public class ScenicRecyclerAdapter extends BaseMultiItemQuickAdapter<FindScenicI
     protected void convert(BaseViewHolder helper, FindScenicItem item) {
         MZBannerView itemRowView = (MZBannerView) helper.getView(R.id.item_row_view);
         itemRowView.setIndicatorAlign(MZBannerView.IndicatorAlign.CENTER);
+        helper.setText(R.id.item_find_name_text_view,item.getName());
         TextView click = helper.getView(R.id.click);
         itemRowView.setPages(item.getImageUrls(), new MZHolderCreator() {
             @Override

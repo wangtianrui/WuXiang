@@ -72,9 +72,16 @@ public class FoodFragment extends BaseMVPFragment {
      * 初始化数据
      */
     private void loadData() {
-        for (int i = 0; i < 10; i++) {
-            mList.add(new FoodItem());
-        }
+        FoodItem foodItem1 = new FoodItem("水煮肉片","味蕾爆炸，爽到不行","温馨饭店",1930,R.drawable.shuizhuroupiantest);
+        FoodItem foodItem2 = new FoodItem("梅菜扣肉","味道独到，肥而不腻","田园山庄",887,R.drawable.food_test_1);
+        FoodItem foodItem3 = new FoodItem("爆炒毛肚","香辣可口","十味阁",2730,R.drawable.food_test_2);
+        FoodItem foodItem4 = new FoodItem("凉拌肉片","川菜","问天餐厅",28,R.drawable.food_test_3);
+        FoodItem foodItem5 = new FoodItem("蔬菜砂锅","解暑清凉","怪味餐厅",723,R.drawable.food_test_4);
+        mList.add(foodItem1);
+        mList.add(foodItem2);
+        mList.add(foodItem3);
+        mList.add(foodItem4);
+        mList.add(foodItem5);
     }
 
 

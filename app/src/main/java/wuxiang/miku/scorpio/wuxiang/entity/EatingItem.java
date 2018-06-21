@@ -13,6 +13,26 @@ public class EatingItem implements MultiItemEntity {
     private String desc;
     private String information;
     private int imageResource;
+    private int distance;
+
+    public EatingItem() {
+    }
+
+    public EatingItem(String name, String desc, String information, int imageResource, int distance) {
+        this.name = name;
+        this.desc = desc;
+        this.information = information;
+        this.imageResource = imageResource;
+        this.distance = distance;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
 
     public int getImageResource() {
         return imageResource;

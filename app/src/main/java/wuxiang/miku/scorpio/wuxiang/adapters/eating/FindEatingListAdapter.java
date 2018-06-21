@@ -30,6 +30,6 @@ public class FindEatingListAdapter extends BaseMultiItemQuickAdapter<EatingItem,
         helper.setText(R.id.tv_hot_name, item.getName())
                 .setText(R.id.tv_hot_desc, item.getDesc())
                 .setText(R.id.tv_hot_showInfo, item.getInformation())
-                .setImageResource(R.id.iv_hot_image, R.drawable.test_image);
+                .setImageResource(R.id.iv_hot_image, item.getImageResource());
     }
 }
